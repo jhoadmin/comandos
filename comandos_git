@@ -1,0 +1,8 @@
+git init
+git config --list
+git status
+git add -A - va a agregar todos los archivos
+git rm --cached file
+git remote set-url origin git@github.com:jhoadmin/prueba.git
+
+git clone url

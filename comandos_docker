@@ -1,0 +1,19 @@
+docker build -t my-primero-php .
+docker network create mynetwork
+
+sudo docker run -d \
+> --network mynetwork --network-alias mysql \
+> -v mysql-data:/var/lib/mysql \
+> -e MYSQL_ROOT_PASSWORD=secret \
+> -e MYSQL_DATABASE=mybase \
+> mysql:8.0.27
+
+sudo docker exec -it 129b4f9a2662 mysql -p - dentro del contenedor con id_contenedor
+
+
+Dentro de Dockfile
+RUN apk add --update vim - install vim
+
+
+sudo usermod -aG docker evg && newgrp docker
+deluser user group

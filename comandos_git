@@ -45,3 +45,5 @@ git reset --soft --mixed (por defecto) --hard (se puede recuperar archivo elimin
 git reflog
 git diff
 
+
+git branch -a

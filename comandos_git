@@ -32,3 +32,10 @@ git remote remove nombre_repositorio
 
 
 git reset HEAD <archivoa> - sacar archivo del commit
+
+git branch -a
+git checkout nombre_branch
+git merge nuevabranch
+git push -u origin nuevabranch
+
+git clone git@github:Kong/kong.git

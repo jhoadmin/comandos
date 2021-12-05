@@ -3,6 +3,27 @@ git config --list
 git status
 git add -A - va a agregar todos los archivos
 git rm --cached file
+git remote add origin https://github.com/jhoadmin/prueba.git
 git remote set-url origin git@github.com:jhoadmin/prueba.git
 
+ssh-keygen -t rsa -b 4096 -C "goolay.e@gmail.com"
+ssh-add ~/.ssh/id_rsa
+cat id_rsa.pub - agregar a github
+
+git remote add origin git@github.com:jhoadmin/prueba.git
+git remote set-url origin git@github.com:jhoadmin/prueba.git
+
+
 git clone url
+
+git branch nuevabranch
+git checkout nuevabranch
+
+git remote show origin - muestra los branches remotos
+
+#delete
+rm -rf carpeta/.git
+git remote remove nombre_repositorio
+
+
+git reset HEAD <archivoa> - sacar archivo del commit

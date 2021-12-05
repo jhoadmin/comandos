@@ -27,7 +27,7 @@ git remote remove nombre_repositorio
 
 git clone git@github.com:jhoadmin/prueba.git
 git push origin master [-u origin nuevabranch]
-git pur origin master
+git push -u origin master (-u linkear branch master  y luego podemos no indicar master)
 
 git branch -a
 git branch nuevabranch
@@ -41,3 +41,7 @@ git checkout nombre_file - descartar cambios en file
 git commit --amend - redactar commit y mensaje
 git config --global core.editor "vim"
 git cherry-pick hash_de_commit
+git reset --soft --mixed (por defecto) --hard (se puede recuperar archivo eliminado)
+git reflog
+git diff
+

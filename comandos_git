@@ -32,3 +32,5 @@ git remote remove nombre_repositorio
 
 
 git reset HEAD <archivoa> - sacar archivo del commit
+
+git branch -a

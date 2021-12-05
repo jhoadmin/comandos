@@ -40,3 +40,4 @@ git reset HEAD <archivoa> - sacar archivo del commit
 git checkout nombre_file - descartar cambios en file
 git commit --amend - redactar commit y mensaje
 git config --global core.editor "vim"
+git cherry-pick hash_de_commit

@@ -3,39 +3,40 @@
 
 Codigo nueva branch
 
+git config --global user.name "nombre"
+git config --global user.mail "mail"
+
 git init
 git config --list
+
 git status
 git add -A - va a agregar todos los archivos
 git rm --cached file
-git remote add origin https://github.com/jhoadmin/prueba.git
-git remote set-url origin git@github.com:jhoadmin/prueba.git
 
 ssh-keygen -t rsa -b 4096 -C "goolay.e@gmail.com"
 ssh-add ~/.ssh/id_rsa
 cat id_rsa.pub - agregar a github
 
-git remote add origin git@github.com:jhoadmin/prueba.git
+git remote add origin https://github.com/jhoadmin/prueba.git
+git remote add origin git@github.com:jhoadmin/prueba.git - (ssh)
 git remote set-url origin git@github.com:jhoadmin/prueba.git
-
-
-git clone url
-
-git branch nuevabranch
-git checkout nuevabranch
-
 git remote show origin - muestra los branches remotos
-
-#delete
-rm -rf carpeta/.git
+git remote -v
 git remote remove nombre_repositorio
 
 
-git reset HEAD <archivoa> - sacar archivo del commit
+git clone git@github.com:jhoadmin/prueba.git
+git push origin master [-u origin nuevabranch]
+git pur origin master
 
 git branch -a
-git checkout nombre_branch
+git branch nuevabranch
+git checkout nuevabranch
 git merge nuevabranch
-git push -u origin nuevabranch
+git branch -d nombre_branch
 
-git clone git@github:Kong/kong.git
+
+git reset HEAD <archivoa> - sacar archivo del commit
+git checkout nombre_file - descartar cambios en file
+git commit --amend - redactar commit y mensaje
+git config --global core.editor "vim"

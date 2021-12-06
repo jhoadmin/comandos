@@ -33,7 +33,8 @@ git branch nuevabranch
 git checkout nuevabranch
 git merge nuevabranch
 git branch -d nombre_branch
-
+git push origin --delete nuevabranch
+git branch -d nuevabranch
 
 git reset HEAD <archivoa> - sacar archivo del commit
 git checkout nombre_file - descartar cambios en file

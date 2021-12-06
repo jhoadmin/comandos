@@ -15,11 +15,20 @@ sudo vi /etc/apt/sources.list
 sudo less /etc/apt/sources.list
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 docker run hello-world
-sudo docker run hello-world
+docker run alpine:latest ls -l [argumento] - ejecutar comando dentro de contenedor
+docker run -it alpine:latest sh - emular terminal
 
-docker build -t my-primero-php .
+docker exec -it id_contenedor sh
+
+docker start | stop id_contenedor (ps -a) - correr contenedor que queda activado
+
+docker ps -a - mostrar muertos contenedores. los podemos startear y ejecutar comandos
+docker commit nombre de contenedor (puede ser muerto) - para crear nuevo imagen
+docker image ls
+docker image tag id_image nombre_tag - para taguear nuevo imagen
+docker image history id_image - historia de comandos ejecutados
+docker build -t my-primero-php . - build con el mismo tag reescribe image
 docker network create mynetwork
-docker ps -a
 
 sudo docker run -d \
 > --network mynetwork --network-alias mysql \
@@ -40,3 +49,6 @@ deluser user group
 
 docker rmi 8a72bd4b69c
 docker rm container
+docker run --rm -v /foo -v awesome:/bar busybox top the volume for /foo will be removed, but the volume for /bar will not.
+
+docker ps --filter status=exited (-q)|grep noip|awk '{print $1}'|xargs docker rm

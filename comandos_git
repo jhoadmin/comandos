@@ -11,7 +11,6 @@ git config --list
 
 git status
 git add -A - va a agregar todos los archivos
-git rm --cached file
 
 ssh-keygen -t rsa -b 4096 -C "goolay.e@gmail.com"
 ssh-add ~/.ssh/id_rsa
@@ -45,5 +44,6 @@ git reset --soft --mixed (por defecto) --hard (se puede recuperar archivo elimin
 git reflog
 git diff
 
+git rm --cached - eliminar archivo del index pero lo deja en directorio (sin seguimento)
 
 git branch -a

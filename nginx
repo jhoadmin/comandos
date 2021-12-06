@@ -1,0 +1,49 @@
+nginx -t --testear configuracion
+nginx -s reload
+apt-get install php-fpm
+apt-get install mysql php-mysql
+
+descomentar php en sitio-available
+501 502 503 problemas con servidor
+si no lo puede interpretar lo descarga como un archivo
+anadimos index.php en file 
+descargar phpmyadmin
+mysqladmin --user=root password "pass"
+create user 'phpmyadmin'@'localhost' identified by 'testadmin';
+grant all privileges on *.* to 'phpmyadmin'@'localhost' with grant option;
+
+# Correr certbot
+
+sudo certbot --nginx
+
+# Testear renovación 
+
+sudo certbot renew --dry-run
+
+## Wordpress
+# Instalar dependencias 
+sudo apt install php-fpm php-common php-mbstring php-xmlrpc php-soap php-gd php-xml php-intl php-mysql php-cli php-mcrypt php-ldap php-zip php-curl
+
+# Crear DB
+
+mysql -u root -p
+
+CREATE DATABASE wordpress;
+CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY 'new_password_here';
+GRANT ALL ON wordpress.* TO 'wordpressuser'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+
+# Bajar e instalar wordpress
+
+wget https://wordpress.org/latest.tar.gz
+tar -zxvf latest.tar.gz
+sudo mv wordpress/* /var/www/pablo
+sudo find /var/www/pablo -type d -exec chmod 0755 {} \;
+sudo find /var/www/pablo -type f -exec chmod 0644 {} \;
+
+# Configurar wordpress
+
+cd /var/www/pablo 
+sudo mv wp-config-sample.php wp-config.php
+sudo vim wp-config.php

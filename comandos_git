@@ -21,7 +21,10 @@ git remote add origin git@github.com:jhoadmin/prueba.git - (ssh)
 git remote set-url origin git@github.com:jhoadmin/prueba.git
 git remote show origin - muestra los branches remotos
 git remote -v
+
+#delete repositorio
 git remote remove nombre_repositorio
+git rm -rf .git y directory - delete repository local
 
 
 git clone git@github.com:jhoadmin/prueba.git

@@ -1,0 +1,17 @@
+noip
+git
+docker
+kubernetes
+nginx
+ansible
+terraform
+
+#seguridad
+
+aide
+snort
+logcheck
+rkhunter
+certbot - grautuito cert ssl
+
+#monitoring

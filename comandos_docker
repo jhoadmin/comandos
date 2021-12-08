@@ -52,3 +52,5 @@ docker rm container
 docker run --rm -v /foo -v awesome:/bar busybox top the volume for /foo will be removed, but the volume for /bar will not.
 
 docker ps --filter status=exited (-q)|grep noip|awk '{print $1}'|xargs docker rm
+
+docker-compose up -d 

@@ -1,9 +1,6 @@
 grep '\S' file.txt - elimine linias completamente en blanco
 
-
-
 #ssh
-
 ssh-keygen -i -f authorized_keys - convertir formato usado para linux
 ssh -t root@ip <comando>
 ssh-copy-id

@@ -4,3 +4,13 @@ grep '\S' file.txt - elimine linias completamente en blanco
 ssh-keygen -i -f authorized_keys - convertir formato usado para linux
 ssh -t root@ip <comando>
 ssh-copy-id
+dpkg -S /bin/ping - el paquete que contiene ping 
+
+
+#desde lectura osnovy linux
+
+locale -a
+w - seansy
+stty -a
+
+

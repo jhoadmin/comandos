@@ -39,6 +39,10 @@ sudo docker run -d \
 
 sudo docker exec -it 129b4f9a2662 mysql -p - dentro del contenedor con id_contenedor
 
+#login y push
+docker login
+docker tag jhoadmin/node-getting:v1 images_id
+docker push jhoadmin/node-getting:v1
 
 Dentro de Dockfile
 RUN apk add --update vim - install vim
@@ -49,8 +53,60 @@ deluser user group
 
 docker rmi 8a72bd4b69c
 docker rm container
+docker ps --filter "status=exited" | grep 'weeks ago' | awk '{print $1}' | xargs --no-run-if-empty docker rm
 docker run --rm -v /foo -v awesome:/bar busybox top the volume for /foo will be removed, but the volume for /bar will not.
-
+docker run --rm -- удаляет установленный контейнер
 docker ps --filter status=exited (-q)|grep noip|awk '{print $1}'|xargs docker rm
 
+docker run --restart=always my-container  -- autostart de contenedores
+
+docker events& -- debug
+docker search -- buscamos contenedores consola
 docker-compose up -d 
+
+
+
+Dockerfile определяет, как создается изображение, а не как оно используется, поэтому вы не можете указать привязку mount в Dockerfile.
+
+
+
+Войдем в скачанный образ для его изменения:
+
+docker run -t -i centos:latest /bin/bash
+
+Внесем небольшие изменения, например, создадим учетную запись:
+
+[root@8f07ef93918f /]# useradd dmosk -G wheel -m
+
+[root@8f07ef93918f /]# passwd dmosk
+
+[root@8f07ef93918f /]# exit
+
+* в данном примере мы создали пользователя dmosk и задали ему пароль.
+
+Коммитим образ:
+
+docker commit -m "Add user dmosk" -a "Dmitry Mosk" 8f07ef93918f centos:my
+
+
+CMD ["/bin/date"]
+Entonces estás usando el ENTRYPOINT por defecto (que es /bin/sh -c), y ejecutando /bin/date sobre dicho punto de entrada.
+El proceso del contenedor se iniciará con la ejecución de /bin/sh -c /bin/date.
+
+ENTRYPOINT ["/bin/echo"]
+CMD ["Hello"]
+ docker build -t test .
+$ docker run test
+Hello
+También puedes especificar un valor diferente para CMD al iniciar un contenedor, y se considerará como parámetro para el ejecutable /bin/echo (en vez del que viene por defecto):
+$ docker run --entrypoint=/bin/hostname test
+b2c70e74df18
+
+MYSQL
+
+ALTER USER root IDENTIFIED WITH mysql_native_password BY 'PASSWORD';
+
+docker-compose
+
+docker-compose restart |start |stop
+docker-compose comando servicio - можно посмотреть сервис 

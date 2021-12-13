@@ -1,0 +1,49 @@
+export var="name"
+unset 
+vi .bashrc - для локальной сессии
+export VAR2='This is Losst Home'
+source .bashrc - обновление конфигурации
+vi .bash_profile - для удаленной сессии
+export VAR2='This is Losst Home'
+vi /etc/bash.profile - global
+ vi /etc/profile - global.remoto
+
+export VAR12='I am available everywhere' -- export a /etc/environment
+
+echo {1,2} 
+(read var1 var2; echo -e "$var1 n$var2") - команды выполняются в одной оболочке
+printf "var1: %s nvar2: %sn" "$var1" "$var2" - печать значения переменных
+
+tee - читает из стандартного ввода и записывает в стандартный файл
+
+file - info de programa
+ldd - отчего зависит некая программа
+wc - l -- contar
+
+finger - info sobre user login name shell...
+sudo -u user -i - login bajo un user
+sudo -u user -s /bin/bash - terminal
+
+strace -fe open /usr/sbin/named -u bind - отслеживать все дочерние процессы и открытия файлов
+strace -fe chdir,open /usr/sbin/named -u bind - отслеживать все дочерние процессы и открытия файлов и изменение каталога
+
+netstat -tulnpt
+
+ps up - посмотреть конкретный процесс
+ps o ruid,euid,ruser,euser - свои поля вывести
+ps t pts/7 - конкретный терминал
+ps j - uid gid, pgid,
+jobs -l - jobs parados
+fg %numero - номер того процесса который был остановлен вернуться
+
+strace -p process
+strace -e open process
+
+nestat -anut
+dig @localhost -x 172.23.0.2 - с помощью опции х вывод обратных вместо -t PTR 2.0.23.172
+
+dpkg -i - paquetes instalados
+dpkg -L - contenido de paquete
+
+apropos nombre -- busqueda de man relacionados con nombre de comando
+stty -a - управляющие коды

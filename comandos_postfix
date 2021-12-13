@@ -1,0 +1,4 @@
+postconf mail_version
+/etc/postfix/main.cf -- archivo principal
+postconf -n -- muestra config
+postconf mail_spool_directory -- directorio for mails

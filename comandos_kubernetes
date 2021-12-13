@@ -1,0 +1,58 @@
+#### INSTALL ####
+sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+man tee
+sudo apt-get update
+sudo apt-get install -y kubectl
+kubectl --version client
+kubectl --version
+kubectl --version client
+kubectl version --client
+kubectl version --client=true
+less .bashrc 
+curl --help
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+sudo minikube 
+man install
+sudo minikube start
+minikube start
+sudo minikube start
+ps ax |grep minikube
+sudo minikube start --drive=docker
+sudo minikube start --driver=docker
+minikube start --driver=docker
+sudo minikube start --driver=docker
+
+sudo minikube start --driver=docker
+ll
+chown root:root docker
+sudo chown root:root docker
+sudo minikube start --driver=docker
+minikube start --driver=docker
+newgrp docker
+
+
+########################################
+
+kubectl get nodes
+kubectl get services
+kubectl get pods
+kubectl get pod nginx -o yaml
+kubectl get ns
+kubectl get statefulsets
+kubectl get svc -- servicios
+kubectl exec -it -- cmd
+kubectl -n kube-system get pods
+kubectl -n kube-system delete pod
+kubectl delete pod nginx
+kubectl delete deployment nombre_deployment
+kubectl delete sts 
+or
+kubectl delete -f 04-deployment.yaml
+
+#debug volume
+kubectl get pvc
+kubectl describe pvc nombre_pvc --debug problemas disks virtuales pending
+
